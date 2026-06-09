@@ -1,0 +1,103 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ===== Virtual environments =====
+venv/
+env/
+ENV/
+.venv/
+.venv*/
+Intern_CMW_env/
+.python-version
+
+# ===== Jupyter Notebook =====
+.ipynb_checkpoints/
+*.ipynb.meta/
+
+# ===== IDE / Editor =====
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.vim/
+.emacs.d/
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# ===== Project-specific: results / outputs =====
+# 评测结果（可选忽略，具体看是否需要与他人共享）
+results/**/*.json
+results/**/*.txt
+results/**/*.csv
+results/**/*.png
+results/**/*.jpg
+results/evalscope_raw/**
+results/benchmark/**
+# 保留 results 目录结构，但忽略内容（保留 .gitkeep）
+!results/.gitkeep
+!**/results/.gitkeep
+
+# ===== Ollama / Model artifacts =====
+*.gguf
+*.safetensors
+*.bin
+*.pt
+*.pth
+.model/
+.models/
+
+# ===== Logs =====
+*.log
+*.log.*
+logs/
+*.out
+
+# ===== Config / Secrets (KEEP .env.example ONLY) =====
+.env
+.env.*
+!.env.example
+
+# ===== Cache =====
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.deepeval/
+.uploads/
+
+# ===== Temporary files =====
+*.tmp
+*.bak
+*.swp
+*.temp
+~$*
+
+# ===== Large datasets (optional) =====
+# 若数据集过大（>100MB），可在此添加忽略规则
+# dataset/large_files/**

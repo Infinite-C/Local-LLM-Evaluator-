@@ -1,0 +1,40 @@
+dimensions:
+  chinese_knowledge:
+    display_name: 中文知识能力
+    datasets: ["ceval"]
+    weight: 0.12
+
+  mmlu_stem:
+    display_name: MMLU STEM
+    datasets: ["mmlu_stem"]
+    weight: 0.12
+
+  mmlu_humanities:
+    display_name: MMLU 人文学科
+    datasets: ["mmlu_humanities"]
+    weight: 0.08
+
+  mmlu_social_sciences:
+    display_name: MMLU 社会科学
+    datasets: ["mmlu_social_sciences"]
+    weight: 0.08
+
+  math_reasoning:
+    display_name: 数学推理能力
+    datasets: ["gsm8k"]
+    weight: 0.18
+
+  instruction_following:
+    display_name: 指令遵循能力
+    datasets: ["ifeval"]
+    weight: 0.12
+
+  commonsense_reasoning:
+    display_name: 常识推理
+    datasets: ["hellaswag"]
+    weight: 0.12
+
+  truthfulness:
+    display_name: 真实性
+    datasets: ["truthfulqa"]
+    weight: 0.18

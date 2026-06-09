@@ -1,0 +1,10 @@
+[
+  {
+    "name": "my_summary_set",
+    "pattern": "general_qa",
+    "dataset": "/data/chenweihang/Intern_CMW/dataset/summarization_datasets",
+    "subset_list": [
+      "default"
+    ]
+  }
+]

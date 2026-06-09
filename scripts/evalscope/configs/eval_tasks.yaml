@@ -1,0 +1,185 @@
+tasks:
+  # ==================== 基座模型基础能力 ====================
+  # 1. 知识能力（Knowledge / MCQ）9b:0.87 4b:0.55总数285
+  - name: mmlu
+    display_name: 英文通用知识能力
+    dimension: general_knowledge
+    dataset: mmlu
+    metric: acc
+    limit: 5
+    enabled: true
+    need_judge_model: false
+    task_type: multiple_choice
+
+  # 2. 中文能力（Chinese / QA / MCQ）9b:0.83 4b:0.32总数260
+  - name: ceval
+    display_name: 中文知识能力
+    dimension: chinese_knowledge
+    dataset: ceval
+    metric: acc
+    limit: 5
+    enabled: true
+    need_judge_model: false
+    task_type: multiple_choice
+
+  # 3. 多语言能力（MultiLingual）9b:0.7218总数1100 4b:0.75总数550
+  - name: mgsm
+    display_name: 多语言数学推理
+    dimension: multilingual_math
+    dataset: mgsm
+    metric: acc
+    limit: 50
+    enabled: true
+    need_judge_model: false
+    task_type: math
+  
+  # 4. 数学能力（Math / Reasoning）9b:0.69 4b:0.80总数50
+  - name: gsm8k
+    display_name: 数学推理能力
+    dimension: math_reasoning
+    dataset: gsm8k
+    metric: acc
+    limit: 50
+    enabled: true
+    need_judge_model: false
+    task_type: math
+
+  # 5. 推理能力（Reasoning）9b:0.80总数270 4b:0.63总数270
+  - name: bbh
+    display_name: BIG-Bench Hard
+    dimension: reasoning
+    dataset: bbh
+    eval_backend: opencompass
+    metric: acc
+    limit: 10
+    enabled: true
+    task_type: generation
+
+  # 6. 常识理解能力（Commonsense / Reasoning）9b:0.42总数50 4b:0.36总数50
+  - name: hellaswag
+    display_name: 常识推理 (HellaSwag)
+    dimension: commonsense_reasoning
+    dataset: hellaswag
+    eval_backend: opencompass
+    metric: acc
+    limit: 50
+    enabled: true
+    need_judge_model: false
+    task_type: multiple_choice
+
+  # 7. 代码能力（Coding）9b:1.00总数20 4b:0.90总数20
+  
+  - name: humaneval
+    display_name: 代码能力
+    dimension: coding
+    dataset: humaneval
+    metric: pass_at_1
+    limit: 20
+    enabled: true
+    need_judge_model: false
+    task_type: code
+
+#  # 8. 问答能力（QA / General-QA）
+#  # TODO: 当前以选择题为主，缺少开放域问答。可考虑添加 SQuAD、Natural Questions、TriviaQA 等。
+#  # 示例（注释）：
+#  - name: drop
+#    display_name: 问答能力
+#    dimension: reading_comprehension
+#    dataset: drop
+#    eval_backend: opencompass
+#    metric: f1
+#    limit: 100
+#    enabled: false
+
+  # 9. 阅读理解能力（ReadingComprehension）9b:0.80总数100 4b:0.77总数100
+  - name: race
+    display_name: 阅读理解 (RACE)
+    dimension: reading_comprehension
+    dataset: race
+    eval_backend: opencompass
+    metric: acc
+    limit: 50
+    enabled: true
+    need_judge_model: false
+    task_type: multiple_choice
+
+  # 10. 信息抽取能力（NER）9b:0.9722总数50 4b:0.95总数50
+  - name: conll2003
+    display_name: 命名实体识别 (CoNLL-2003)
+    dimension: ner
+    dataset: conll2003
+    eval_backend: opencompass
+    metric: f1
+    limit: 50
+    enabled: true
+    need_judge_model: false
+    task_type: generation
+
+  # 11. 长上下文能力（LongContext / Retrieval）9b:0.28总数150 4b:0.19总数150
+  - name: longbench_v2
+    display_name: 长上下文理解 (LongBench)
+    dimension: long_context
+    dataset: longbench_v2
+    eval_backend: opencompass
+    metric: f1
+    limit: 50
+    enabled: true
+    need_judge_model: false
+    task_type: generation
+
+  # 12. 指令遵循能力（InstructionFollowing）9b:0.72总数50 4b:0.5总数50
+  - name: ifeval
+    display_name: 指令遵循能力
+    dimension: instruction_following
+    dataset: ifeval
+    metric: strict_loose_acc
+    limit: 50
+    enabled: true
+    need_judge_model: false
+    task_type: instruction_following
+
+  # 13. 偏好评测（Arena / AlpacaEval2.0 / ArenaHard（deepeval中评估）
+
+    
+  
+  # ==================== 应用生成质量 ====================
+  # 14. 答案相关性（answer_relevancy）（deepeval中评估）
+         
+  # 15. 事实一致性（deepeval中评估）
+
+  
+  # 16. 幻觉检测（Hallucination / TruthfulQA）9b:0.76总数50 4b：0.74总数50
+  - name: truthfulqa
+    display_name: 真实性 (TruthfulQA)
+    dimension: truthfulness
+    dataset: truthful_qa
+    metric: mc2
+    limit: 50
+    enabled: true
+    need_judge_model: false
+    task_type: generation  
+  # 17. 摘要质量评估（deepeval中评估）
+  
+  # ==================== 其他扩展（可选） ====================
+  # 多语言指令遵循（多语言能力 + 指令遵循）可以用
+  - name: multi_if
+    display_name: 多语言指令遵循 (Multi-IF)
+    dimension: instruction_following_multilingual
+    dataset: multi_if
+    metric: strict_loose_acc
+    limit: 10
+    enabled: false
+    need_judge_model: false
+    task_type: instruction_following
+   
+  # τ²-bench (Agent能力评估)
+  - name: tau2_bench
+    display_name: 多轮对话代理 (τ²-bench)
+    dimension: conversational_agent
+    dataset: tau2_bench
+    dataset_args:
+      subset_list: ['airline', 'retail', 'telecom']  # 选择领域
+    limit: 1  
+    enabled: false 
+    need_judge_model: false  
+    task_type: generation

@@ -1,0 +1,34 @@
+[
+  {
+    "name": "squad_answer_relevance",
+    "pattern": "general_qa",
+    "dataset": "/data/chenweihang/Intern_CMW/dataset/answer_relevance_datasets/squad_sample_evalscope.jsonl",
+    "subset_list": [
+      "default"
+    ]
+  },
+  {
+    "name": "nq_answer_relevance",
+    "pattern": "general_qa",
+    "dataset": "/data/chenweihang/Intern_CMW/dataset/answer_relevance_datasets/nq_sample_evalscope.jsonl",
+    "subset_list": [
+      "default"
+    ]
+  },
+  {
+    "name": "rag_eval_answer_relevance",
+    "pattern": "general_qa",
+    "dataset": "/data/chenweihang/Intern_CMW/dataset/answer_relevance_datasets/rag_eval_sample_evalscope.jsonl",
+    "subset_list": [
+      "default"
+    ]
+  },
+  {
+    "name": "multilingual_answer_relevance",
+    "pattern": "general_qa",
+    "dataset": "/data/chenweihang/Intern_CMW/dataset/answer_relevance_datasets/multilingual_sample_evalscope.jsonl",
+    "subset_list": [
+      "default"
+    ]
+  }
+]
